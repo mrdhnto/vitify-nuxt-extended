@@ -49,26 +49,6 @@ drawerState.value = lgAndUp.value && width.value !== 1280
       <AppDrawerItem v-for="route in routes" :key="route.name" :item="route" />
     </v-list>
     <v-spacer />
-    <template #append>
-      <v-list-item class="drawer-footer px-0 d-flex flex-column justify-center">
-        <div class="text-caption pt-6 pt-md-0 text-center text-no-wrap">
-          &copy; Copyright 2023
-          <a
-            href="https://github.com/kingyue737"
-            class="font-weight-bold text-primary"
-            target="_blank"
-            >Yue JIN</a
-          >
-          <span> & </span>
-          <a
-            href="https://www.nustarnuclear.com/"
-            class="font-weight-bold text-primary"
-            target="_blank"
-            >NuStar</a
-          >
-        </div>
-      </v-list-item>
-    </template>
   </v-navigation-drawer>
 </template>
 

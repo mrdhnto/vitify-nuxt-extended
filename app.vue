@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const theme = useTheme()
 provide(
   THEME_KEY,
@@ -21,28 +21,19 @@ useSeoMeta({
   twitterImage: '/social-image.png',
   twitterCard: 'summary_large_image',
 })
+const color = computed({
+  get() {
+    return theme.themes.value.light.colors.primary
+  },
+})
 </script>
 
-<template>
-  <v-app>
-    <AppDrawer />
-    <AppBar />
-    <v-main>
-      <NuxtPage />
-    </v-main>
-    <AppFooter />
-  </v-app>
-</template>
 
-<style scoped>
-/* replace padding with margin to limit scrollbar in v-main */
-.v-main {
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: var(--v-layout-top);
-  margin-bottom: var(--v-layout-bottom);
-  height: calc(100vh - var(--v-layout-top) - var(--v-layout-bottom));
-  overflow-y: auto;
-  transition-property: padding;
-}
-</style>
+<template>
+  <div>
+    <NuxtLoadingIndicator :color="color" />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
+</template>

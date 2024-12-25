@@ -2,6 +2,9 @@
 definePageMeta({
   title: 'Menu 1',
   icon: 'mdi-animation',
+  middleware: 'guards',
+  subject: 'nested-1',
+  actions: 'read'
 })
 </script>
 <template>

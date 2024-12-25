@@ -1,0 +1,19 @@
+:root {
+  --v-shadow-key-umbra-color: 47, 43, 61;
+  --v-shadow-xs-opacity: 0.1;
+  --v-shadow-sm-opacity: 0.12;
+  --v-shadow-md-opacity: 0.14;
+  --v-shadow-lg-opacity: 0.16;
+  --v-shadow-xl-opacity: 0.18;
+  --margin-top-app-bar: 5rem;
+}
+
+.v-theme--light {
+  --v-theme-surface: 255, 255, 255;
+  --v-theme-background: 248, 247, 250;
+}
+
+.v-theme--dark {
+  --v-theme-surface: 47, 51, 74;
+  --v-theme-background: 37, 41, 60;
+}

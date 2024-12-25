@@ -1,55 +1,22 @@
 <script setup lang="ts">
 definePageMeta({
+  layout: 'dashboard',
   icon: 'mdi-monitor-dashboard',
   title: 'Dashboard',
   drawerIndex: 1,
+  middleware: 'guards',
+  subject: 'dashboard',
+  actions: 'read'
 })
-const stats = ref([
-  {
-    icon: 'mdi-web',
-    title: 'Bandwidth',
-    value: 23,
-    unit: 'GB',
-    color: 'primary',
-    caption: 'Up: 13, Down: 10',
-  },
-  {
-    icon: 'mdi-rss',
-    title: 'Submissions',
-    value: 108,
-    color: 'primary',
-    caption: 'Too young, too naive',
-  },
-  {
-    icon: 'mdi-send',
-    title: 'Requests',
-    value: 1238,
-    color: 'warning',
-    caption: 'Limit: 1320',
-  },
-  {
-    icon: 'mdi-bell',
-    title: 'Messages',
-    value: 9042,
-    color: 'primary',
-    caption: 'Warnings: 300, erros: 47',
-  },
-  {
-    icon: 'mdi-github',
-    title: 'Github Stars',
-    value: NaN,
-    color: 'grey',
-    caption: 'API has no response',
-  },
-  {
-    icon: 'mdi-currency-cny',
-    title: 'Total Fee',
-    value: 2300,
-    unit: '￥',
-    color: 'error',
-    caption: 'Upper Limit: 2000 ￥',
-  },
-])
+const stats = ref('')
+
+await $fetch('/api/dashboard', {
+  method: 'GET',
+}).then((response) => {
+  stats.value = response.data
+}).catch((error) => {
+  Notify.error(error)
+})
 </script>
 
 <template>

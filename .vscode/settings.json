@@ -1,0 +1,16 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "C:\\Users\\User\\Documents\\Backup E\\sqldb",
+      "name": "tes"
+    },
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "test",
+      "database": "${workspaceFolder:vitify-nuxt-extended}/models/main.sqlite"
+    }
+  ]
+}

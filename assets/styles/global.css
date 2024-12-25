@@ -15,13 +15,16 @@ html {
     color: rgba(0, 0, 0, 0.54);
   }
   --v-border-opacity: 0.09 !important;
-  --v-theme-background: 243, 243, 243 !important;
+  /* --v-theme-background: 243, 243, 243 !important; */
+  --v-theme-background: 248, 247, 250 !important;
 }
 
 .v-app-bar,
 .v-navigation-drawer,
-.v-footer {
-  background-color: rgb(var(--v-theme-background)) !important;
+.v-footer,
+.v-toolbar {
+  background-color: rgb(var(--v-theme-surface)) !important;
+  box-shadow: 0 2px 8px rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-sm-opacity)),0 0 transparent,0 0 transparent !important;
 }
 
 .v-overlay__content > .v-card {
@@ -61,4 +64,8 @@ html {
 .v-icon .iconify {
   width: 100%;
   height: 100%;
+}
+
+.v-main .container {
+  width: -webkit-fill-available;
 }

@@ -1,7 +1,7 @@
 <p align="center">
   <img alt="Vitify - Opinionated Vuetify Admin Starter Template" src="public/vitify-nuxt.svg" width=100px/>
 </p>
-<h1 align="center">Vitify Nuxt</h1>
+<h1 align="center">Vitify Nuxt Extended</h1>
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
@@ -16,11 +16,14 @@
 </p>
 
 <p align='center'>
-<b>Vuetify 3</b> + <b>Nuxt 3</b>, Opinionated Admin Starter Template<br><br>
-</p>
+<b>Vuetify 3</b> + <b>Nuxt 3</b> + <b>Sequelize</b> + <b>RBAC</b><br/>
 
+
+</p>
+<i>
+All the content is still on the work, it may be unstable and design can be changed in the future updates.</i>
 <p align='center'>
-<a href="https://vitify-nuxt.netlify.app/">Live Demo<br><br></a>
+<b>Any contributions is welcomed!</b>
 </p>
 
 ## Features
@@ -35,11 +38,8 @@
 
 - 📥 APIs auto importing - for Composition API, VueUse and custom composables
 
-- ☁️ Deploy on [Netlify](https://www.netlify.com/), zero-config
+- 🦾 RBAC in both app (Client & Server)
 
-- 🦾 TypeScript 100%
-
-- 🧪 Unit, Component and E2E Testing with [@nuxt/test-utils](https://github.com/nuxt/test-utils)
 
 <br>
 
@@ -51,20 +51,18 @@
 
 - 🔔 Notification store
 
+- 🔍 [Sequelize ORM](https://sequelize.org/) for Mature and most supported DB
+
 - 📉 Data visualization with [nuxt-echarts](https://github.com/kingyue737/nuxt-echarts)
 
 - 🎨 Theme color customization and dark mode
 
-- 📱 Responsive layout
+- 📱 Multiple and Responsive layout
 
 - 🛡️ Authentication backed-in using [nuxt-auth-utils](https://github.com/Atinux/nuxt-auth-utils)
 
-## Variants
+- 🕵️ RBAC on Client and Server inspired by CASTL
 
-- [vitify-next](https://github.com/kingyue737/vitify-next) - Lightweight Vue 3 version without Nuxt
-
-- [vitify-electron](https://github.com/kingyue737/vitify-electron) - Vuetify 3 + Vite + Electron starter
-- [vitify-admin](https://github.com/kingyue737/vitify-admin) - Vue 2.7 with i18n, browser compatibility and mock server
 
 ## Pre-packed
 
@@ -76,6 +74,7 @@
 - [Nuxt Icon](https://github.com/nuxt/icon) - Icon module for Nuxt with 200,000+ ready to use icons from Iconify
 - [Nuxt ECharts](https://github.com/kingyue737/nuxt-echarts) - Nuxt module for Apache ECharts™
 - [Nuxt Auth Utils](https://github.com/Atinux/nuxt-auth-utils) - Minimalist Authentication module for Nuxt
+- [Nuxt Cron](https://github.com/hywax/nuxt-cron) - Minimalist Nuxt Cronjob function runner
 
 ### Coding Style
 
@@ -93,53 +92,9 @@
   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter
   - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
-## Try it now!
+## Developer Note
 
-### GitHub Template
-
-[Create a repo from this template on GitHub](https://github.com/kingyue737/vitify-nuxt/generate).
-
-### Clone to local
-
-If you prefer to do it manually with the cleaner git history
-
-```bash
-npx degit kingyue737/vitify-nuxt my-vitify-app
-cd my-vitify-app
-pnpm i
-```
-
-### Authentication Setup
-
-> You can switch to any [OAuth Providers](https://github.com/Atinux/nuxt-auth-utils#supported-oauth-providers) supported by [Nuxt Auth Utils](https://github.com/Atinux/nuxt-auth-utils) or write your own.
-
-Create a [GitHub OAuth Application](https://github.com/settings/applications/new) with:
-
-- Homepage url: `http://localhost:3000`
-- Callback url: `http://localhost:3000/api/auth/github`
-
-Add the variables in the `.env` file:
-
-```bash
-NUXT_OAUTH_GITHUB_CLIENT_ID="my-github-oauth-app-id"
-NUXT_OAUTH_GITHUB_CLIENT_SECRET="my-github-oauth-app-secret"
-```
-
-To create sealed sessions, you also need to add `NUXT_SESSION_SECRET` in the `.env` with at least 32 characters:
-
-```bash
-NUXT_SESSION_SECRET=your-super-long-secret-for-session-encryption
-```
-
-Nuxt Auth Utils generates one for you when running Nuxt in development the first time if no `NUXT_SESSION_PASSWORD` is set.
-
-### Development
-
-Start the development server on http://localhost:3000
-
-```bash
-pnpm run dev
-```
+I know some of this implementation will need to reconfigure some plugin behaviour or even break entirelly, I also don't have enough time to test all of the features (like edge deploy). But I hope this project will give some people basic starter template to their next project without trying hard thinkering their code to works.
 
 ## License
 
